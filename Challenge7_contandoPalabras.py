@@ -59,7 +59,7 @@ def contarVecesPalabra(lista:list):
         cuenta = 0 # reinicio de la cuenta para la siguiente palabra
         i += 1
 
-# Convertimos una frase dada en una lista de palabras que sean válidas:
+# Convertimos una frase cualquiera en una lista de palabras que sean válidas:
 listaPalabras = extraerPalabras("Hola, mi nombre es larrea. Mi nombre completo es Naia Larrea (NLarrea).")
 # Contamos cuántas veces aparece cada palabra y lo guardamos en el diccionario:
 contarVecesPalabra(listaPalabras)
