@@ -13,9 +13,6 @@
 # - Revisaré el ejercicio en directo desde Twitch el lunes siguiente al de su publicación.
 # - Subiré una posible solución al ejercicio el lunes siguiente al de su publicación.
 
-from ctypes import sizeof
-
-
 cadena = input("Introduce una cadena de texto: ")
 invertida = ""
 i = len(cadena)-1
