@@ -16,31 +16,29 @@ def esMorse(frase:str):
 def aMorse(frase:str):
     nuevaFrase = "" # creamos un string vacío
     for letter in frase: # por cada letra de la frase:
-        for key in morseDictionary.keys(): # por cada "key" de la lista de llaves del diccionario:
-            if letter.upper() == key: # si la letra en mayúscula coincide con alguna "key":
-                nuevaFrase += str(morseDictionary[key]) # nuevaFrase = al value de la llave guardada en "key"
-                nuevaFrase += " " # añadimos para separar cada caractere
-                break # decimos que deje de buscar parecidos en la lista
-            elif letter == " ": # si es igual a un espacio:
-                nuevaFrase += " " # añade el espacio --> habrá 2 espacios entre palabras en Morse
-                break # decimos que deje de buscar parecidos en la lista
-            if letter.upper() not in morseDictionary.keys(): # si letter no aparece en el diccionario:
-                return "\nERROR: hay errores en la sintaxis de la frase introducida\n" # nuevaFrase = ERROR
+        if letter.upper() in morseDictionary.keys(): # si la letra en mayúscula coincide con alguna "key":
+            nuevaFrase += str(morseDictionary[letter.upper()]) # nuevaFrase = al value de la llave guardada en "key"
+            nuevaFrase += " " # añadimos para separar cada caractere
+            continue # decimos que deje de buscar parecidos en la lista
+        elif letter == " ": # si es igual a un espacio:
+            nuevaFrase += " " # añade el espacio --> habrá 2 espacios entre palabras en Morse
+            continue # decimos que deje de buscar parecidos en la lista
+        if letter.upper() not in morseDictionary.keys(): # si letter no aparece en el diccionario:
+            return "\nERROR: hay errores en la sintaxis de la frase introducida\n" # nuevaFrase = ERROR
     return nuevaFrase # devolvemos la nueva frase, en Morse
 
 def aNatural(frase:str):
     listaPalabras = extraerPalabras(frase) # creamos una lista con las palabras de la frase
     nuevaFrase = "" # creamos un string vacío
     for letter in listaPalabras: # por cada letra de la frase:
-        for value in morseDictionary.values(): # por cada "value" de la lista de valores del diccionario:
-            if letter==value and letter!=" ": # si la letra (mayus, porque es de la lista) coincide en "value":
-                nuevaFrase += getKeyFromValue(value) # obtenemos la llave conociendo el valor
-                break
-            elif letter == " ": # si la "letra" de la lista es un " ":
-                nuevaFrase += " " # añadimos un espacio (para separar palabras entre sí)
-                break # decimos que deje de buscar en la lista
-            if letter not in morseDictionary.values(): # si letter no aparece en el diccionario:
-                return "\nERROR: hay errores en la sintaxis de la frase introducida\n" # nuevaFrase = ERROR
+        if letter in morseDictionary.values(): # si la letra (mayus, porque es de la lista) coincide en "value":
+            nuevaFrase += getKeyFromValue(letter) # obtenemos la llave conociendo el valor
+            continue
+        elif letter == " ": # si la "letra" de la lista es un " ":
+            nuevaFrase += " " # añadimos un espacio (para separar palabras entre sí)
+            continue # decimos que deje de buscar en la lista
+        if letter not in morseDictionary.values(): # si letter no aparece en el diccionario:
+            return "\nERROR: hay errores en la sintaxis de la frase introducida\n" # nuevaFrase = ERROR
     return nuevaFrase # devolvemos la nueva frase
 
 def extraerPalabras(frase:str):
