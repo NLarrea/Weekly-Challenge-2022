@@ -25,7 +25,7 @@ def aMorse(frase:str):
             continue # decimos que deje de buscar parecidos en la lista
         if letter.upper() not in morseDictionary.keys(): # si letter no aparece en el diccionario:
             return "\nERROR: hay errores en la sintaxis de la frase introducida\n" # nuevaFrase = ERROR
-    return nuevaFrase # devolvemos la nueva frase, en Morse
+    return "\nLa palabra o frase:\n""{0}""\n\nen Morse es:\n{1}".format(frase,nuevaFrase) # devolvemos la nueva frase, en Morse
 
 def aNatural(frase:str):
     listaPalabras = extraerPalabras(frase) # creamos una lista con las palabras de la frase
@@ -39,7 +39,7 @@ def aNatural(frase:str):
             continue # decimos que deje de buscar en la lista
         if letter not in morseDictionary.values(): # si letter no aparece en el diccionario:
             return "\nERROR: hay errores en la sintaxis de la frase introducida\n" # nuevaFrase = ERROR
-    return nuevaFrase # devolvemos la nueva frase
+    return "\nLa palabra o frase:\n""{0}""\n\nen natural es:\n{1}".format(frase,nuevaFrase) # devolvemos la nueva frase
 
 def extraerPalabras(frase:str):
     frase += " " # para solucionar IndexError
@@ -65,18 +65,16 @@ def getKeyFromValue(value): # para obtener el valor de key conociendo value
     if keys: # si está en la lista, lo devuelve
         return keys[0]
     return None # si no está, devuelve 'None'
+    # EXPLICACIÓN DE CÓDIGO:
+    # value = una "letra" en código Morse.
+    # keys = creamos una lista usando un bucle:
+    #   k for k --> por cada pareja KEY-VALUE del diccionario:
+    #       si v==value, guarda el KEY de ese VALUE en la lista "keys"
 
 frase = input("Introduce una frase: ")
 es_morse = esMorse(frase)
 if es_morse == 0: # no es Morse
     nuevaFrase = aMorse(frase)
-    if nuevaFrase != "\nERROR: hay errores en la sintaxis de la frase introducida\n":
-        print("\nLa palabra o frase:\n""{0}""\n\nen Morse es:\n{1}".format(frase,nuevaFrase))
-    else:
-        print(nuevaFrase)
 elif es_morse == 1: # es Morse
     nuevaFrase = aNatural(frase)
-    if nuevaFrase != "\nERROR: hay errores en la sintaxis de la frase introducida\n":
-        print("\nLa palabra o frase:\n""{0}""\n\nen natural es:\n{1}".format(frase,nuevaFrase))
-    else:
-        print(nuevaFrase)
+print(nuevaFrase)
