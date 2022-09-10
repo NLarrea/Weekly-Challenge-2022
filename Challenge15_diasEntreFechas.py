@@ -24,7 +24,6 @@ def insertData():
 
 date1 = insertData() # asks the first date
 date2 = insertData() # asks the second date
-#print("date1 - date2: {0}".format(abs(date1-date2)))
 date3 = abs(date1 - date2).days # calculates de difference in days
 date1 = date1.strftime("%d/%m/%Y") # changes the format to "date1" output
 date2 = date2.strftime("%d/%m/%Y") # changes the format to "date2" output
