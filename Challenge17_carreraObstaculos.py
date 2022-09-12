@@ -24,7 +24,7 @@
  # - Subiré una posible solución al ejercicio el lunes siguiente al de su publicación.
 
 def checkResult(array:list,track:str):
-    # checks whitch one has bigger length:
+    # checks which one has bigger length:
     totalActions = len(array) if len(array)>len(track) else len(track)
     minActions = len(array) if len(array)<len(track) else len(track)
     athleteTrack = "" # empty string to save the results
