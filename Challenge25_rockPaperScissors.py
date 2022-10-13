@@ -10,11 +10,8 @@
 # - El par puede contener combinaciones de "R" (piedra), "P" (papel) o "S" (tijera).
 # - Ejemplo. Entrada: [("R","S"), ("S","R"), ("P","S")]. Resultado: "Player 2".
 #
-# Información adicional:
-# - Usa el canal de nuestro discord (https://mouredev.com/discord) "🔁reto-semanal" para preguntas, dudas o prestar ayuda a la comunidad.
-# - Puedes hacer un Fork del repo y una Pull Request al repo original para que veamos tu solución aportada.
-# - Revisaré el ejercicio en directo desde Twitch el lunes siguiente al de su publicación.
-# - Subiré una posible solución al ejercicio el lunes siguiente al de su publicación.
+# Creador de los retos semanales: https://github.com/mouredev
+# Repositorio original de Mouredev: https://github.com/mouredev/Weekly-Challenge-2022-Kotlin
 
 def rockScissorsPaper(game):
     p1 = 0

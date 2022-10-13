@@ -1,3 +1,15 @@
+# Reto #14
+# ¿ES UN NÚMERO DE ARMSTRONG?
+# Fecha publicación enunciado: 04/04/22
+# Fecha publicación resolución: 11/04/22
+# Dificultad: FÁCIL
+#
+# Enunciado: Escribe una función que calcule si un número dado es un número de Amstrong (o también llamado narcisista).
+# Si no conoces qué es un número de Armstrong, debes buscar información al respecto.
+#
+# Creador de los retos semanales: https://github.com/mouredev
+# Repositorio original de Mouredev: https://github.com/mouredev/Weekly-Challenge-2022-Kotlin
+
 def isNarcisist(number):
     nDigits = countDigits(number) # counts the number of digits in "number"
     equal = 0 # to save the value of num

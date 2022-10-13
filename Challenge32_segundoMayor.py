@@ -6,9 +6,8 @@
 #
 # Enunciado: Dado un listado de números, encuentra el SEGUNDO más grande.
 #
-# Información adicional:
-# - Usa el canal de nuestro Discord (https://mouredev.com/discord) "🔁reto-semanal" para preguntas, dudas o prestar ayuda a la comunidad.
-# - Tienes toda la información sobre los retos semanales en https://retosdeprogramacion.com/semanales2022.
+# Creador de los retos semanales: https://github.com/mouredev
+# Repositorio original de Mouredev: https://github.com/mouredev/Weekly-Challenge-2022-Kotlin
 
 lista = [1,4,23,98,56,43,76,12,7]
 lista.sort()

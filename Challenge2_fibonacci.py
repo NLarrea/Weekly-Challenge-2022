@@ -8,6 +8,8 @@
 # La serie Fibonacci se compone por una sucesión de números en la que el siguiente siempre es la suma de los dos anteriores.
 # 0, 1, 1, 2, 3, 5, 8, 13...
 #
+# Creador de los retos semanales: https://github.com/mouredev
+# Repositorio original de Mouredev: https://github.com/mouredev/Weekly-Challenge-2022-Kotlin
 
 def fibonacci(n,fib_anterior,fib_anterior2):
     if n==0:
