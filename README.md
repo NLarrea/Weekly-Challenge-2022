@@ -9,7 +9,7 @@ En este repositorio estarán disponibles las soluciones a dichos retos realizada
 
 # Links de interés
 <ul>
-	<li><a href="https://www.python.org/">Página oficial de Python</a></li>
+	<li><a href="https://www.python.org/" target="_blank">Página oficial de Python</a></li>
 	<li>Creador del repositorio original: <a href="https://github.com/mouredev" target="_blank">Mouredev</a></li>
 	<li>Repositorio original en Kotlin: <a href="https://github.com/mouredev/Weekly-Challenge-2022-Kotlin" target="_blank">Weekly-Challenge-2022</a></li>
 </ul>
