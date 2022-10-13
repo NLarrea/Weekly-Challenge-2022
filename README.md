@@ -6,3 +6,10 @@ En este repositorio estarán disponibles las soluciones a dichos retos realizada
 
 ## Acceder al repositorio original
 [Aquí](https://github.com/mouredev/Weekly-Challenge-2022-Kotlin) dejo el link correspondiente al repositorio original, donde se pueden ver tanto los enunciados de cada reto, como las soluciones propuestas por la comunidad, y las soluciones (en Kotlin) aportadas por el propio creador de dichos retos semanales.
+
+# Links de interés
+<ul>
+	<li><a href="https://www.python.org/">Página oficial de Python</a></li>
+	<li>Creador del repositorio original: <a href="https://github.com/mouredev" target="_blank">Mouredev</a></li>
+	<li>Repositorio original en Kotlin: <a href="https://github.com/mouredev/Weekly-Challenge-2022-Kotlin" target="_blank">Weekly-Challenge-2022</a></li>
+</ul>
