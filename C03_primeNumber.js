@@ -8,8 +8,8 @@ Dificultad: MEDIA
 Enunciado: Escribe un programa que se encargue de comprobar si un número es o no primo.
 Hecho esto, imprime los números primos entre 1 y 100.
 
-Statement: Write a program that checks if a number is a prime number or not.
-With this done, print the prime numbers between 1 and 100.
+Statement: Write a program that checks whether a number is a prime number or not.
+Once this is done, print the prime numbers between 1 and 100.
 
 Creador de los retos semanales: https://github.com/mouredev
 Repositorio original de Mouredev: https://github.com/mouredev/Weekly-Challenge-2022-Kotlin
