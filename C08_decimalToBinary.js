@@ -7,6 +7,8 @@ Dificultad: FÁCIL
 
 Enunciado: Crea un programa se encargue de transformar un número decimal a binario sin utilizar funciones propias del lenguaje que lo hagan directamente.
 
+Statement: Create a program to transform a decimal number to binary without using language functions that do it directly.
+
 Creador de los retos semanales: https://github.com/mouredev
 Repositorio original de Mouredev: https://github.com/mouredev/Weekly-Challenge-2022-Kotlin
 */
