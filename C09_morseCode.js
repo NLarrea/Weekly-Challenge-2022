@@ -28,27 +28,17 @@ const morseDic = {
     "/":"-..-."
 };
 
-/*
-function getKeyByValue(object, value){
-    return Object.keys(object).find(key => object[key] === value);
-}
-console.log(getKeyByValue(morseDic, ".-")); // A
-*/
-
 // a function to check if the string is Morse or Natural
 function checkIfMorse(str){
-    if(str === "") return "String is empty";
-    for(char of str){
-        if(char!==" " && char!=="-" && char!==".") return false;
-    }
-    return true;
+    if(str === "") return "String is empty"; // if str = empty -> return "String is empty"
+    // else -> check if there are different elements than " ", "." and "-"
+	return !(/[^ .-]/g.test(str)); // if test = true (is not Morse) -> return false, if test = false (is Morse) -> return true
 }
 
 function toNatural(str){
     const mList = str.split(" "); // to get a list of Morse characters
     let toNatural = ""; // empty string
     mList.forEach(element => {
-        console.log(element)
         if(element !== "") toNatural += Object.keys(morseDic).find(key => morseDic[key] === element);
         else if(element === "") toNatural += " ";
     });
@@ -72,7 +62,7 @@ const p2 = ".... . .-.. .-.. ---  .-- --- .-. .-.. -.."; // should return "HELLO
 // FIRST EXAMPLE -> from natural to Morse
 let isMorse = checkIfMorse(p1); // check if it's Morse or not
 // transform to the other one
-if(isMorse === true) var result = toNatural(p1);
+if(isMorse) var result = toNatural(p1);
 else result = toMorse(p1);
 // print the result
 console.log(result); // .... .. --..--  -- -.--  -. .- -- .  .. ...  -. .- .. .-
@@ -80,7 +70,7 @@ console.log(result); // .... .. --..--  -- -.--  -. .- -- .  .. ...  -. .- .. .-
 // SECOND EXAMPLE -> from Morse to natural
 isMorse = checkIfMorse(p2); // check if it's Morse Code or not
 // transform to the other one
-if(isMorse === true) result = toNatural(p2);
+if(isMorse) result = toNatural(p2);
 else result = toMorse(p2);
 // print the result
 console.log(result); // HELLO WORLD
