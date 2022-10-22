@@ -18,5 +18,5 @@ function factorial(num){
 	return num * factorial(num - 1);
 }
 
-console.log(factorial(5));
-console.log(factorial(10));
+console.log(factorial(5)); // 120
+console.log(factorial(10)); // 3628800

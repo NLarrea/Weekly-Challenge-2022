@@ -19,13 +19,13 @@ Repositorio original de Mouredev: https://github.com/mouredev/Weekly-Challenge-2
 
 function printNonCommon(str1, str2){
 	// create two strings -> if one doesn't contain c, includes c to the other one
-	let out1 = str1.split("").filter(c => !(str2.split("").includes(c))).toString();
-	let out2 = str2.split("").filter(c => !(str1.split("").includes(c))).toString();
+	let out1 = str1.split("").filter(c => !(str2.split("").includes(c))).join("");
+	let out2 = str2.split("").filter(c => !(str1.split("").includes(c))).join("");
 	// to print the strings
 	console.log(`out1: ${out1}`);
 	console.log(`out2: ${out2}`);
 }
 
-printNonCommon("naia", "larrea");
-printNonCommon("I like Javascript", "I like Python");
-printNonCommon("In my spare time I often learn new things about programming", "I am also a rugby player and referee");
+printNonCommon("naia", "larrea"); // out1: ni | out2: lrre
+printNonCommon("I like Javascript", "I like Python"); // out1: Javascrp | out2: Pyhon
+printNonCommon("In my spare time I often learn new things about programming", "I am also a rugby player and referee"); // out1: titwthiti | out2: d

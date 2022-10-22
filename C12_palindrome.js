@@ -28,5 +28,5 @@ function isPalindrome(str){
 	return false; // else -> return false
 }
 
-console.log(isPalindrome("Live on time, emit no evil"));
-console.log(isPalindrome("What do you think about this challenge?"))
+console.log(isPalindrome("Live on time, emit no evil")); // true
+console.log(isPalindrome("What do you think about this challenge?")); // false

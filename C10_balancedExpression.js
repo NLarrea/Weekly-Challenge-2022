@@ -49,11 +49,11 @@ function removeFromExpression(exp, c){
 	return exp;
 }
 
-console.log(isBalanced("{a + b [c] * (2x2)}}}}"));
-console.log(isBalanced("{ [ a * ( c + d ) ] - 5 }"));
-console.log(isBalanced("{ a * ( c + d ) ] - 5 }"));
-console.log(isBalanced("{a^4 + (((ax4)}"));
-console.log(isBalanced("{ ] a * ( c + d ) + ( 2 - 3 )[ - 5 }"));
-console.log(isBalanced("{{{{{{(}}}}}}"));
-console.log(isBalanced("(a"));
-console.log(isBalanced("{ ( ) [ ] }"))
+console.log(isBalanced("{a + b [c] * (2x2)}}}}")); // false
+console.log(isBalanced("{ [ a * ( c + d ) ] - 5 }")); // true
+console.log(isBalanced("{ a * ( c + d ) ] - 5 }")); // false
+console.log(isBalanced("{a^4 + (((ax4)}")); // false
+console.log(isBalanced("{ ] a * ( c + d ) + ( 2 - 3 )[ - 5 }")); // false
+console.log(isBalanced("{{{{{{(}}}}}}")); // false
+console.log(isBalanced("(a")); // false
+console.log(isBalanced("{ ( ) [ ] }")); // true
