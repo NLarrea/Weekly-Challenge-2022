@@ -29,7 +29,7 @@ a rectangular frame of asterisks.
 	* challenge? *
 	**************
 
-  Creador de los retos semanales: https://github.com/mouredev
+Creador de los retos semanales: https://github.com/mouredev
 Repositorio original de Mouredev: https://github.com/mouredev/Weekly-Challenge-2022-Kotlin
 */
 
