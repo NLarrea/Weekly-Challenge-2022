@@ -29,7 +29,7 @@ function isSorted(array){
 	if(!compareArrays(array, arrToCompare)){
 		arrToCompare = array.slice().sort((a, b) => b - a);
 		if(compareArrays(array, arrToCompare)) return true; // if sorted from largest to smallest, return true
-		return 0;
+		return false;
 	}
 	return true; // if sorted from smallest to largest, return true
 }
