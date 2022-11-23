@@ -18,21 +18,17 @@ Repositorio original de Mouredev: https://github.com/mouredev/Weekly-Challenge-2
 function mostUsedVowel(text){
     // create a const with the vowels
     const vowelList = [
-        {value: "a", vowel: ["a","á","à","ä","â"], counter: 0},
-        {value: "e", vowel: ["e","é","è","ë","ê"], counter: 0},
-        {value: "i", vowel: ["i","í","ì","ï","î"], counter: 0},
-        {value: "o", vowel: ["o","ó","ò","ö","ô"], counter: 0},
-        {value: "u", vowel: ["u","ú","ù","ü","û"], counter: 0}
+        {value: "a", vowelOptions: ["a","á","à","ä","â"], counter: 0},
+        {value: "e", vowelOptions: ["e","é","è","ë","ê"], counter: 0},
+        {value: "i", vowelOptions: ["i","í","ì","ï","î"], counter: 0},
+        {value: "o", vowelOptions: ["o","ó","ò","ö","ô"], counter: 0},
+        {value: "u", vowelOptions: ["u","ú","ù","ü","û"], counter: 0}
     ];
     text = text.toLowerCase(); // convert to lowercase
     // loop through the text
     for(char of text){
-        // if the char is a vowel, increase the counter
-        if(vowelList[0].vowel.includes(char)) vowelList[0].counter++;
-        else if(vowelList[1].vowel.includes(char)) vowelList[1].counter++;
-        else if(vowelList[2].vowel.includes(char)) vowelList[2].counter++;
-        else if(vowelList[3].vowel.includes(char)) vowelList[3].counter++;
-        else if(vowelList[4].vowel.includes(char)) vowelList[4].counter++;
+        // if the char is a vowel, increase its counter
+        vowelList.forEach(vowel => {if(vowel.vowelOptions.includes(char)) vowel.counter++;})
     }
     // if there are no vowels, return empty
     if(vowelList.every(element => element.counter === 0)) return "empty"
