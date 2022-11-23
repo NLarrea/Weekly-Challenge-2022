@@ -17,23 +17,20 @@ def mostUsedVowel(text):
     # VARIABLES AND INITIALIZATION
     # list of vowels with their respective count
     VOWELS = [
-        {"value": "a", "vowel": ["a","á","à","ä","â"], "counter": 0},
-        {"value": "e", "vowel": ["e","é","è","ë","ê"], "counter": 0},
-        {"value": "i", "vowel": ["i","í","ì","ï","î"], "counter": 0},
-        {"value": "o", "vowel": ["o","ó","ò","ö","ô"], "counter": 0},
-        {"value": "u", "vowel": ["u","ú","ù","ü","û"], "counter": 0}
+        {"value": "a", "vowelOptions": ["a","á","à","ä","â"], "counter": 0},
+        {"value": "e", "vowelOptions": ["e","é","è","ë","ê"], "counter": 0},
+        {"value": "i", "vowelOptions": ["i","í","ì","ï","î"], "counter": 0},
+        {"value": "o", "vowelOptions": ["o","ó","ò","ö","ô"], "counter": 0},
+        {"value": "u", "vowelOptions": ["u","ú","ù","ü","û"], "counter": 0}
     ]
     text = text.lower() # convert text to lowercase
 
     # COUNT VOWELS
-    # iterate over each character in the text
+    # iterate over each character in the text and check if it is a vowel
     for char in text:
-        # if the character is a vowel, increase the counter
-        if char in VOWELS[0]["vowel"]: VOWELS[0]["counter"] += 1
-        elif char in VOWELS[1]["vowel"]: VOWELS[1]["counter"] += 1
-        elif char in VOWELS[2]["vowel"]: VOWELS[2]["counter"] += 1
-        elif char in VOWELS[3]["vowel"]: VOWELS[3]["counter"] += 1
-        elif char in VOWELS[4]["vowel"]: VOWELS[4]["counter"] += 1
+        for vowel in VOWELS:
+            # if the character is a vowel, increase its counter
+            if char in vowel["vowelOptions"]: vowel["counter"] += 1
     
     # CHECK WHICH VOWEL HAS THE HIGHEST COUNT
     # variables to store the most repeated vowel and its counter
