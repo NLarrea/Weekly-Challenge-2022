@@ -13,7 +13,7 @@
 # Creador de los retos semanales: https://github.com/mouredev
 # Repositorio original de Mouredev: https://github.com/mouredev/Weekly-Challenge-2022-Kotlin
 
-def mostUsedVowel(text):
+""" def mostUsedVowel(text):
     # VARIABLES AND INITIALIZATION
     # list of vowels with their respective count
     VOWELS = [
@@ -51,10 +51,28 @@ def mostUsedVowel(text):
     # if the highest counter is equal to the second highest counter, return that there is no most repeated vowel
     if VOWELS[0]["counter"] == VOWELS[1]["counter"]: return "no vowels repeating more than others"
     # return the most repeated vowel
-    return f'"{highestValue}"'
+    return f'"{highestValue}"' """
 
-print(mostUsedVowel("Hello")) # "no vowels repeating more than others"
-print(mostUsedVowel("ghdjf")) # "empty"
-print(mostUsedVowel("Hello World")) # "o"
-print(mostUsedVowel("This is a good day")) # "no vowels repeating more than others"
-print(mostUsedVowel("Hola, ¿qué tal estás hoy?")) # "a"
+import unicodedata
+
+def mostUsedVowel(text):
+    vowelCount = {} # dictionary to store the count of each vowel
+    for char in unicodedata.normalize('NFD', text.lower()):
+        if char in "aeiou":
+            if char in vowelCount: vowelCount[f"{char}"] += 1
+            else: vowelCount.setdefault(f"{char}", 1)
+    mostRepeated = []
+    maxRepeated = 0
+    for vowel in vowelCount:
+        count = vowelCount[vowel]
+        if count >= maxRepeated:
+            if count > maxRepeated: mostRepeated = []
+            mostRepeated.append(vowel)
+            maxRepeated = count
+    return mostRepeated if mostRepeated else "There are no vowels"
+
+print(mostUsedVowel("Hello")) # ['e', 'o']
+print(mostUsedVowel("ghdjf")) # "There are no vowels"
+print(mostUsedVowel("Hello World")) # ['o']
+print(mostUsedVowel("This is a good day")) # ['i', 'a', 'o']
+print(mostUsedVowel("Hola, ¿qué tal estás hoy?")) # ['a']
