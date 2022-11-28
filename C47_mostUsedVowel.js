@@ -16,32 +16,32 @@ Repositorio original de Mouredev: https://github.com/mouredev/Weekly-Challenge-2
 */
 
 function mostUsedVowel(text){
-    // create a const with the vowels
-    const vowelList = [
-        {value: "a", vowelOptions: ["a","á","à","ä","â"], counter: 0},
-        {value: "e", vowelOptions: ["e","é","è","ë","ê"], counter: 0},
-        {value: "i", vowelOptions: ["i","í","ì","ï","î"], counter: 0},
-        {value: "o", vowelOptions: ["o","ó","ò","ö","ô"], counter: 0},
-        {value: "u", vowelOptions: ["u","ú","ù","ü","û"], counter: 0}
-    ];
-    text = text.toLowerCase(); // convert to lowercase
-    // loop through the text
-    for(char of text){
-        // if the char is a vowel, increase its counter
-        vowelList.forEach(vowel => {if(vowel.vowelOptions.includes(char)) vowel.counter++;})
+    let vowelCount = {} // empty object
+    // loop through the text in lowercase and normalize the accents
+    text.toLowerCase().normalize('NFD').split("").forEach(char => {
+        // check if the char is a vowel
+        if("aeiou".includes(char)){
+            // if the vowel is in the object, increase its counter, else add it to the object
+            (char in vowelCount)? vowelCount[`${char}`]++ : vowelCount[`${char}`] = 1;
+        }
+    })
+    let mostRepeated = []; // empty list to store the most repeated vowels
+    let maxRepeated = 0; // variable to store the number of max repeated vowels
+    // loop through the object
+    for(vowel in vowelCount){
+        let count = vowelCount[vowel]; // store the value of the counter of each vowel
+        if(count >= maxRepeated){
+            // if the counter is greater than the max repeated, empty the list and add the vowel
+            if(count > maxRepeated) mostRepeated = [];
+            mostRepeated.push(vowel); // add the vowel to the list
+            maxRepeated = count; // update the max repeated
+        }
     }
-    // if there are no vowels, return empty
-    if(vowelList.every(element => element.counter === 0)) return "empty"
-    // sort the array by counter
-    vowelList.sort((a,b) => b.counter-a.counter);
-    // if the first and second element have the same counter, return that there is no most used vowel
-    if(vowelList[0].counter === vowelList[1].counter) return "no vowels repeating more than others"
-    // return the first element (the most repeated)
-    return `"${vowelList[0].value}"`;
+    return (mostRepeated.length !== 0)? mostRepeated : "There are no vowels";
 }
 
-console.log(mostUsedVowel("Hello")); // "no vowels repeating more than others"
-console.log(mostUsedVowel("ghdjf")); // "empty"
-console.log(mostUsedVowel("Hello World")); // "o"
-console.log(mostUsedVowel("This is a good day")); // "no vowels repeating more than others"
-console.log(mostUsedVowel("Hola, ¿qué tal estás hoy?")); // "a"
+console.log(mostUsedVowel("Hello")); // ['e', 'o']
+console.log(mostUsedVowel("ghdjf")); // "There are no vowels"
+console.log(mostUsedVowel("Hello World")); // ['o']
+console.log(mostUsedVowel("This is a good day")); // ['i',  'a', 'o']
+console.log(mostUsedVowel("Hola, ¿qué tal estás hoy?")); // ['a']
