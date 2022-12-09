@@ -31,15 +31,13 @@ function adventCalendar(date){
             minutes = Math.floor(seconds / 60),
             hours = Math.floor(minutes / 60),
             days = Math.floor(hours / 24),
-            months = Math.floor(days / 30),
             years = Math.floor(days / 365);
-        const pad = (n) => {return (n < 10)? '0' + n : n};
+        const pad = (n) => {return (n > 9)? n : '0' + n};
         seconds %= 60;
         minutes %= 60;
         hours %= 24;
-        days %= 30;
-        months %= 12;
-        return `${years} años, ${months} meses, ${days} días y ` + [pad(hours), pad(minutes), pad(seconds)].join(":");
+        days = ((hours / 24) < 365)? Math.floor(hours / 24) : Math.floor(hours / 24) % 365;
+        return `${years} años, ${days} días y ` + [pad(hours), pad(minutes), pad(seconds)].join(":");
     }
 
     let difTime;
@@ -57,4 +55,4 @@ function adventCalendar(date){
 console.log(adventCalendar(new Date(2022, 11, 01))); // 🎁
 console.log(adventCalendar(new Date(2022, 11, 24, 23, 59, 59))); // 🎁
 console.log(adventCalendar(new Date())) // Aún faltan: 0 años, 0 meses, 1 dias y 11:50:07
-console.log(adventCalendar(new Date(2022, 11, 25))) // Han pasado: 0 años, 1 meses, 1 días y 00:00:00
+console.log(adventCalendar(new Date(2023, 11, 25))) // Han pasado: 0 años, 1 meses, 1 días y 00:00:00
