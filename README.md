@@ -1,7 +1,7 @@
 # Weekly-Challenge-2022
 
-![GitHub language count](https://img.shields.io/github/languages/count/nlarrea/coding-challenge-2022?style=flat-square)
-![GitHub top language](https://img.shields.io/github/languages/top/nlarrea/coding-challenge-2022?style=flat-square)
+![GitHub language count](https://img.shields.io/github/languages/count/nlarrea/coding-challenge-2022?style=flat-square&labelColor=181717&color=006c67)
+![GitHub top language](https://img.shields.io/github/languages/top/nlarrea/coding-challenge-2022?style=flat-square&labelColor=181717&color=006c67)
 
 ## ¿Qué es esto?
 
